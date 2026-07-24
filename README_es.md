@@ -5,6 +5,7 @@
 [🇬🇧 Read in English](README.md)
 
 ---
+📖 Lee el artículo completo: [Clonar cualquier voz con Qwen sin gastar USD 2000 en NVIDIA](https://albe.com.ar/articulo/clonar-cualquier-voz-con-qwen-sin-gastar-usd-2000-en-nvidia)
 
 ## 🚀 Características
 
