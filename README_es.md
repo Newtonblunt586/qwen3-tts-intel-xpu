@@ -14,6 +14,13 @@
 
 ---
 
+## 🎯 Objetivo
+
+Si bien modelos avanzados como **Qwen3-TTS** están preparados de forma nativa para ejecutarse en CPUs y GPUs NVIDIA, correrlos puramente sobre CPU genera tiempos de inferencia sumamente lentos, volviendo la generación de voz poco práctica para el día a día.
+
+El objetivo principal de este proyecto es derribar esa barrera para los usuarios de **hardware Intel**. Mediante el uso de **Intel Extension for PyTorch (IPEX)** y el backend `xpu`, esta demo permite aprovechar la potencia de las **GPUs Intel Arc**, logrando una aceleración real por hardware, optimizando el rendimiento y haciendo viable la clonación y síntesis de voz local fuera de los ecosistemas tradicionales.
+
+
 ## 🛠️ Requisitos de Hardware y Software
 
 - **GPU:** Intel Arc (compatible con XPU).

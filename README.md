@@ -12,6 +12,12 @@
 
 ---
 
+## 🎯 Objective
+
+While models like **Qwen3-TTS** natively support standard hardware ecosystems (such as NVIDIA GPUs and CPUs), running them purely on standard CPUs results in extremely slow inference times, making real-time or batch generation impractical. 
+
+The main goal of this project is to bridge this gap for **Intel hardware users**. By leveraging **Intel Extension for PyTorch (IPEX)** and the `xpu` backend, this demo enables developers to run Qwen3-TTS locally on **Intel Arc GPUs**, unlocking proper hardware acceleration, maximizing performance efficiency, and making high-quality voice cloning accessible outside of traditional ecosystems.
+
 ## 🛠️ Hardware & Software Requirements
 
 - **GPU:** Intel Arc (XPU-compatible).
