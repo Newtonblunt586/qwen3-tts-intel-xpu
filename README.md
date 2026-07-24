@@ -2,8 +2,10 @@
 
 > Minimalist demo to run **Qwen3-TTS** locally using hardware acceleration on **Intel Arc GPUs** via *Intel Extension for PyTorch (IPEX)*.
 
-[blog](https://albe.com.ar/articulo/clonar-cualquier-voz-con-qwen-sin-gastar-usd-2000-en-nvidia)
 ---
+
+
+📖 Blog Entry (Spanish): [Clonar cualquier voz con Qwen sin gastar USD 2000 en NVIDIA](https://albe.com.ar/articulo/clonar-cualquier-voz-con-qwen-sin-gastar-usd-2000-en-nvidia)
 
 ## 🚀 Features
 
